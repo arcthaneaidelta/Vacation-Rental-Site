@@ -1,0 +1,61 @@
+/* Design tokens — PRD section 5. Single source of truth for color, shadow, motion. */
+:root {
+  --tide-800: #1D4366;
+  --tide-900: #14304A;
+  --tide-950: #0E2338;
+  --seaglass-100: #E3EEEC;
+  --seaglass-500: #6F9C97;
+  --brass-500: #B08A4F;
+  --brass-600: #946F3A;
+  --sand-0: #FFFFFF;
+  --sand-50: #FAF7F2;
+  --sand-100: #F3EEE5;
+  --sand-200: #EAE3D6;
+  --ink-900: #17222D;
+  --ink-600: #4A5866;
+  --ink-500: #6B7785;
+  --line-200: #E2DBCF;
+  --line-300: #CFC5B4;
+  --ok-600: #3F7D5A;
+  --ok-100: #E6F0EA;
+  --warn-600: #B7791F;
+  --warn-100: #F7EEDC;
+  --err-600: #B4443A;
+  --err-100: #F6E5E3;
+  --info-600: #3E6E93;
+  --info-100: #E4EDF4;
+
+  --shadow-1: 0 1px 2px rgba(20, 48, 74, .06);
+  --shadow-2: 0 8px 24px rgba(20, 48, 74, .08);
+  --shadow-3: 0 24px 60px rgba(20, 48, 74, .16);
+
+  --dur-fast: 150ms;
+  --dur-med: 280ms;
+  --dur-slow: 600ms;
+  --ease-std: cubic-bezier(.2, 0, 0, 1);
+  --ease-enter: cubic-bezier(.16, 1, .3, 1);
+  --ease-exit: cubic-bezier(.4, 0, 1, 1);
+
+  --header-h: 72px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 1ms;
+    --dur-med: 60ms;
+    --dur-slow: 100ms;
+  }
+}
+
+/* Metric-matched fallbacks to keep CLS near zero while webfonts swap in */
+@font-face {
+  font-family: 'Newsreader Fallback';
+  src: local('Georgia');
+  size-adjust: 96%;
+  ascent-override: 92%;
+}
+@font-face {
+  font-family: 'Hanken Fallback';
+  src: local('Arial');
+  size-adjust: 98%;
+}
